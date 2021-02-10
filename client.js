@@ -1,10 +1,10 @@
 const net = require('net');
-
+const { IP, PORT } = require('./constants');
 const connect = function() {
 
   const conn = net.createConnection({
     host: 'localhost',
-    port: 50541
+    PORT
   });
 
   conn.setEncoding('utf8');
@@ -18,15 +18,8 @@ const connect = function() {
     conn.write('Name: RAD');
   });
 
-  // conn.on ('connect', () => {
-  //   conn.write('Move: up');
-  //   setInterval(() => {
-  //     conn.write('Move: up');
-  //   }, 50);
-  // });
-
   return conn;
 
 };
 
-module.exports = connect;
+module.exports = { connect };

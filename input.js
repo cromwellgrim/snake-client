@@ -5,28 +5,27 @@ let connection;
 function handleUserInput() {
   const stdin = process.stdin;
   stdin.on('data', (key) => {
+    console.log(key);
     if (key === '\u0003') {
       process.exit();
     }
-  });
-  stdin.on('data', (key) => {
-    if (key === '\u0087') {
-      conn.write('Move: up');
+    if (key === '\u0077') {
+      connection.write('Move: up');
     }
-  });
-  stdin.on('data', (key) => {
-    if (key === '\u0083') {
-      conn.write('Move: down');
+    if (key === '\u0061') {
+      connection.write('Move: left');
     }
-  });
-  stdin.on('data', (key) => {
-    if (key === '\u0056') {
-      conn.write('Move: left');
+    if (key === '\u0073') {
+      connection.write('Move: down');
     }
-  });
-  stdin.on('data', (key) => {
-    if (key === '\u0222') {
-      conn.write('Move: right');
+    if (key === '\u0064') {
+      connection.write('Move: right');
+    }
+    if (key === '\u0074') {
+      connection.write('Say: dude');
+    }
+    if (key === '\u0072') {
+      connection.write('Say: rad');
     }
   });
 }

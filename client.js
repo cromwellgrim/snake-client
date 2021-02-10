@@ -16,7 +16,14 @@ const connect = function() {
   conn.on ('connect', () => {
     console.log('Server says: you connected');
     conn.write('Name: RAD');
-  })
+  });
+
+  // conn.on ('connect', () => {
+  //   conn.write('Move: up');
+  //   setInterval(() => {
+  //     conn.write('Move: up');
+  //   }, 50);
+  // });
 
   return conn;
 
